@@ -1,0 +1,15 @@
+[Unit]
+Description=Ares rover_drive_node
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=argentum
+Environment="ROS_DOMAIN_ID=42"
+ExecStart=/home/argentum/start_rover.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

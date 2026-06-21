@@ -1,0 +1,2 @@
+[console_scripts]
+rover_drive_node = rover_drive.rover_drive_node:main
