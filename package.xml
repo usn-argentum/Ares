@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>rover_drive</name>
+<<<<<<< HEAD
   <version>0.5.0</version>
+=======
+  <version>0.4.0</version>
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
   <description>Ackermann drive node for autonomous rescue rover</description>
   <maintainer email="">Argentum</maintainer>
   <license>MIT</license>

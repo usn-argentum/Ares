@@ -8,7 +8,11 @@ def generate_launch_description():
     """
     Simulation launch file.
     Starts joy_node and teleop_twist_joy only.
+<<<<<<< HEAD
     Simulator consumes /cmd_vel directly.
+=======
+    rover_drive_node is not launched — simulator consumes /cmd_vel directly.
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
     """
 
     config = os.path.join(

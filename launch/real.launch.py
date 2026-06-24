@@ -5,17 +5,6 @@ from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
-    """
-    Operator laptop launch file.
-    Starts joy_node and teleop_twist_joy. Publishes /cmd_vel over WiFi.
-<<<<<<< HEAD
-
-    Note: If ros2 launch fails due to package registration issues,
-    use scripts/launch_joystick.sh instead.
-=======
-    Requires: PS5 controller connected, ROS_DOMAIN_ID=42.
->>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
-    """
 
     config = os.path.join(
         get_package_share_directory('rover_drive'),
@@ -24,11 +13,24 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        Node(package='joy', executable='joy_node', name='joy_node'),
+
+        Node(
+            package='joy',
+            executable='joy_node',
+            name='joy_node'
+        ),
+
         Node(
             package='teleop_twist_joy',
             executable='teleop_node',
             name='teleop_twist_joy',
             parameters=[config]
         ),
+
+        Node(
+            package='rover_drive',
+            executable='rover_drive_node',
+            name='rover_drive_node'
+        ),
+
     ])

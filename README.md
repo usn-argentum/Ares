@@ -11,16 +11,26 @@ to four output topics consumed by the micro-ROS bridge layer.
 
 ```
 Operator laptop
+<<<<<<< HEAD
   scripts/launch_joystick.sh
   └── /cmd_vel ──── WiFi ──► Jetson
                                rover_drive_node (auto-starts on boot)
+=======
+  joystick.launch.py
+  └── /cmd_vel ──── WiFi ──► Jetson
+                               rover_drive_node
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
                                ├── /left_motor_speed
                                ├── /right_motor_speed
                                ├── /left_steering_angle
                                └── /right_steering_angle
                                        │
                                        ▼
+<<<<<<< HEAD
                                micro-ROS bridge (Hermes)
+=======
+                               micro-ROS bridge
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
                                        │
                                        ▼
                                Motor controllers
@@ -67,7 +77,11 @@ MAX_STEER   = 30.0  # degrees
 ## Dependencies
 
 ```bash
+<<<<<<< HEAD
 sudo apt install ros-jazzy-joy ros-jazzy-teleop-twist-joy python3-pip
+=======
+sudo apt install ros-jazzy-joy ros-jazzy-teleop-twist-joy
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 ```
 
 ---
@@ -80,8 +94,12 @@ mkdir -p ~/robocup_ws/src
 cd ~/robocup_ws/src
 git clone https://github.com/usn-argentum/Ares.git rover_drive
 cd ~/robocup_ws
+<<<<<<< HEAD
 colcon build --packages-select rover_drive --symlink-install
 source /opt/ros/jazzy/setup.bash
+=======
+colcon build --packages-select rover_drive
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 source install/setup.bash
 echo "export ROS_DOMAIN_ID=42" >> ~/.bashrc
 source ~/.bashrc
@@ -93,15 +111,26 @@ cd ~/robocup_ws/src/rover_drive
 bash install_service.sh
 ```
 
+<<<<<<< HEAD
 This installs Python metadata, creates the start script, and enables auto-start on boot.
+=======
+After installation, `rover_drive_node` starts automatically on boot
+and restarts on failure.
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 
 ---
 
 ## Usage
 
+<<<<<<< HEAD
 ### Operator laptop — start joystick
 ```bash
 bash ~/robocup_ws/src/rover_drive/scripts/launch_joystick.sh
+=======
+### Operator laptop
+```bash
+ros2 launch rover_drive joystick.launch.py
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 ```
 
 Hold **L1** to enable. Left stick = drive. Right stick = steer.
@@ -117,9 +146,17 @@ ros2 topic echo /left_motor_speed    # verify output
 
 ### After a code update on Jetson
 ```bash
+<<<<<<< HEAD
 bash ~/robocup_ws/src/rover_drive/scripts/update.sh
 ```
 
+=======
+bash scripts/update.sh
+```
+
+Pulls latest changes, rebuilds, and restarts the service in one command.
+
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 ### Simulation
 ```bash
 ros2 launch rover_drive sim.launch.py
@@ -137,6 +174,7 @@ ros2 launch rover_drive sim.launch.py
 
 ---
 
+<<<<<<< HEAD
 ## Known Issue — ROS2 Package Registration
 
 On Ubuntu 24 with setuptools 68, `ros2 run` and `ros2 launch rover_drive` may
@@ -152,6 +190,8 @@ on the laptop.
 
 ---
 
+=======
+>>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 ## Status
 
 | Item | Status |
