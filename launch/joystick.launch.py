@@ -8,15 +8,8 @@ def generate_launch_description():
     """
     Operator laptop launch file.
     Starts joy_node and teleop_twist_joy. Publishes /cmd_vel over WiFi.
-<<<<<<< HEAD
-
-    Note: If ros2 launch fails due to package registration issues,
-    use scripts/launch_joystick.sh instead.
-=======
-    Requires: PS5 controller connected, ROS_DOMAIN_ID=42.
->>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
+    Requires: PS5 controller connected, ROS_DOMAIN_ID=0.
     """
-
     config = os.path.join(
         get_package_share_directory('rover_drive'),
         'config',
