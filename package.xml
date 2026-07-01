@@ -3,7 +3,7 @@
   <name>rover_drive</name>
   <version>0.4.0</version>
   <description>Ackermann drive node for autonomous rescue rover</description>
-  <maintainer email="">Argentum</maintainer>
+  <maintainer email="contact@usnargentum.no">Argentum</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
