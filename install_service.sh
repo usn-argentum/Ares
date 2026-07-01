@@ -1,17 +1,13 @@
 #!/bin/bash
 # install_service.sh
-<<<<<<< HEAD
 # Run once on the Jetson after cloning the repository.
 # Installs Python metadata, creates the start script, and enables auto-start.
-=======
 # Installs and enables the rover_drive systemd service on the Jetson.
 # Run once after cloning the repository.
->>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-<<<<<<< HEAD
 WS_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 USERNAME=$(whoami)
 HOME_DIR="/home/$USERNAME"
@@ -35,25 +31,20 @@ INSTALL_PATH="/etc/systemd/system/rover_drive.service"
 sudo cp "$SERVICE_FILE" "$INSTALL_PATH"
 sudo sed -i "s|User=argentum|User=$USERNAME|g" "$INSTALL_PATH"
 sudo sed -i "s|/home/argentum|$HOME_DIR|g" "$INSTALL_PATH"
-=======
 SERVICE_FILE="$SCRIPT_DIR/systemd/rover_drive.service"
 INSTALL_PATH="/etc/systemd/system/rover_drive.service"
 
 echo "Installing rover_drive service..."
 sudo cp "$SERVICE_FILE" "$INSTALL_PATH"
->>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 sudo systemctl daemon-reload
 sudo systemctl enable rover_drive.service
 sudo systemctl start rover_drive.service
 
-<<<<<<< HEAD
 echo "[4/4] Done."
 echo ""
 echo "rover_drive_node starts automatically on boot."
-=======
 echo ""
 echo "Service installed. rover_drive_node starts automatically on boot."
->>>>>>> 8608813ef3726ca761cc7b9d4093b39aee5dd9b4
 echo ""
 echo "Commands:"
 echo "  sudo systemctl status rover_drive    # status"
